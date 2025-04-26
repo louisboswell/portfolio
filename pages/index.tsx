@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { AtSign, CornerDownRight } from "lucide-react";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -13,8 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 function listItem (item: {role: string, location: string, year: string}, index: number) {
+  const offset = "ml-" + index;
+
   return (
-    <li className={"flex justify-between mt-1 ml-" + index}>
+    <li className={"flex justify-between items-center mt-1 " + offset}>
     <div className="flex gap-1">
     <CornerDownRight size={24}/>
     <a className="font-bold">
@@ -24,16 +27,37 @@ function listItem (item: {role: string, location: string, year: string}, index: 
     <a>{item.location}</a>
     </div>
 
-    <a className="text-sm italic">{item.year}</a>
+    <a className="text-xs italic text-gray-400">{item.year}</a>
   </li>
   );
 }
 
-const items = [
+function listProject (item: {name: string, technology: string, year: string}) {
+  return (
+    <li>
+      <Button variant="ghost" className="flex flex-row justify-between items-center w-full h-auto px-1 py-1 cursor-pointer">
+      <div className="flex flex-col items-start">
+        <a className="font-bold text-lg">{item.name}</a>
+        <a className="text-xs">{item.technology}</a>
+      </div>
+
+      <a className="text-xs text-gray-400">{item.year}</a>
+      </Button>
+    </li>
+  );
+}
+
+const achievements = [
   { role: "Computer Science", location: "University of Leeds", year: "2020 - 2024" },
   { role: "Technology Consultant", location: "PwC", year: "2020 - current" },
   { role: "Young Engineer of the Year", location: "Big Bang Fair Regional", year: "2019"},
   { role: "Innovation Eward Winner", location: "EES", year: "2019"}
+];
+
+const projects = [
+  { name: "Project Title 1", technology: "React & Node.js", year: "March 2025" },
+  { name: "Project Title 2", technology: "Python & Django", year: "February 2025" },
+  { name: "Project Title 3", technology: "Go & Kubernetes", year: "January 2025" }
 ];
 
 
@@ -46,9 +70,9 @@ export default function Home() {
         <div className="flex flex-col w-1/2">
         <div className="flex flex-row justify-between items-end">
           <a className="font-bold text-5xl subpixel-antialiased">
-            louis  boswell
+            louis boswell
           </a>
-          <a className="italic text-sm">UK</a>
+          <a className="italic text-sm text-gray-400">UK</a>
         </div>
 
 
@@ -59,12 +83,13 @@ export default function Home() {
           <a className="mt-10 font-bold text-2xl">current projects</a>
             <Separator/>
             <ul className="list-none">
+              {projects.map((item) => listProject(item))}
             </ul>
 
             <a className="mt-10 font-bold text-2xl">achievements</a>
             <Separator/>
             <ul className="list-none">
-              {items.map((item, index) => listItem(item, index))}
+              {achievements.map((item, index) => listItem(item, index))}
             </ul>
         </div>
       </main>
