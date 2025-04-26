@@ -89,7 +89,7 @@ export default function Home() {
             <a className="mt-10 font-bold text-2xl">achievements</a>
             <Separator/>
             <ul className="list-none">
-              {achievements.map((item, index) => listItem(item, index))}
+              {achievements.map((item, index) => listItem(item))}
             </ul>
         </div>
       </main>
