@@ -17,9 +17,9 @@ function listItem (item: {role: string, location: string, year: string}, index: 
   const offset = "ml-" + index;
 
   return (
-    <li className={"flex justify-between items-center mt-1 " + offset}>
+    <li className={"flex justify-between items-center mt-.5"}>
     <div className="flex gap-1">
-    <CornerDownRight size={24}/>
+    {/* <CornerDownRight size={24}/> */}
     <a className="font-bold">
       {item.role}
     </a>
@@ -65,9 +65,9 @@ export default function Home() {
   return (
     <div>
       <main
-        className={`${geistSans.variable} ${geistMono.variable} flex flex-col items-center justify-start p-24`}
+        className={`${geistSans.variable} ${geistMono.variable} flex flex-col items-center justify-start py-24`}
       >
-        <div className="flex flex-col w-1/2">
+        <div className="flex flex-col min-md:w-1/2">
         <div className="flex flex-row justify-between items-end">
           <a className="font-bold text-5xl subpixel-antialiased">
             louis boswell
