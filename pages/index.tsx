@@ -12,8 +12,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const dumpText = "Mauris quis posuere purus, at pharetra enim. Curabitur quis sodales lectus. Phasellus iaculis lacus nec ultricies egestas. Maecenas imperdiet mauris gravida tristique tincidunt. Suspendisse elementum a diam nec iaculis. Vivamus suscipit libero metus, rhoncus rhoncus elit fringilla et. Duis ultrices eget felis non tincidunt. Vestibulum ullamcorper posuere consequat. Fusce feugiat eleifend purus ac suscipit. Proin laoreet odio ac metus ullamcorper faucibus. Duis rhoncus mauris quis euismod condimentum. Proin mollis magna diam, et pulvinar turpis aliquet scelerisque."
-
 function listItem (item: {role: string, location: string, year: string}, index: number) {
   return (
     <li className={"flex justify-between mt-1 ml-" + index}>
@@ -32,10 +30,10 @@ function listItem (item: {role: string, location: string, year: string}, index: 
 }
 
 const items = [
-  { role: "computer science graduate", location: "university of leeds", year: "graduated july 2024" },
-  { role: "technology consultant", location: "pwc", year: "2020 - current" },
-  { role: "young engineer of the year", location: "big bang fair", year: "2019"},
-  { role: "innovation award winner", location: "ees", year: "2019"}
+  { role: "Computer Science", location: "University of Leeds", year: "2020 - 2024" },
+  { role: "Technology Consultant", location: "PwC", year: "2020 - current" },
+  { role: "Young Engineer of the Year", location: "Big Bang Fair Regional", year: "2019"},
+  { role: "Innovation Eward Winner", location: "EES", year: "2019"}
 ];
 
 
@@ -55,11 +53,14 @@ export default function Home() {
 
 
           <Separator className="mb-4"/>
-          <a>
-            {dumpText}
-          </a>
+          <a className="font-semibold">Passionate and curious tech enthusiast with a strong foundation in computer science, and a burning desire to keep learning.</a>
+          <a className="mt-2">Currently working as a Technology Consultant at PwC after graduating the Technology Degree Apprentice program, with a 1st degree in Computer Science from the University of Leeds.</a>
 
-          
+          <a className="mt-10 font-bold text-2xl">current projects</a>
+            <Separator/>
+            <ul className="list-none">
+            </ul>
+
             <a className="mt-10 font-bold text-2xl">achievements</a>
             <Separator/>
             <ul className="list-none">

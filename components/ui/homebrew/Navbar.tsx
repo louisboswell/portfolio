@@ -17,7 +17,7 @@ export default function Navbar () {
                 <NavigationMenuItem key={option}>
                 <Link href={option != 'home' ? '/' + option : '/'} legacyBehavior passHref>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <a className="font-bold text-lg">{option}</a>
+                        <b className="text-lg">{option}</b>
                     </NavigationMenuLink>
                 </Link>
                 </NavigationMenuItem>)}
