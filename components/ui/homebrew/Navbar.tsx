@@ -1,0 +1,28 @@
+import Link from "next/link";
+import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "../navigation-menu";
+import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
+
+const options = [
+    'home',
+    'blog',
+    'projects'
+]
+
+export default function Navbar () {
+    return (
+        <div className="flex justify-center w-full">
+            <NavigationMenu className="flex items-center">
+            <NavigationMenuList>
+                {options.map((option) =>                 
+                <NavigationMenuItem key={option}>
+                <Link href={option != 'home' ? '/' + option : '/'} legacyBehavior passHref>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <a className="font-bold text-lg">{option}</a>
+                    </NavigationMenuLink>
+                </Link>
+                </NavigationMenuItem>)}
+            </NavigationMenuList>
+            </NavigationMenu>
+        </div>
+    );
+}
