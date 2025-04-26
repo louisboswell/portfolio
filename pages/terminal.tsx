@@ -1,27 +1,27 @@
 // import { Button } from "@/components/ui/button";
 import { Minus, Square, X } from "lucide-react";
-import { Ubuntu_Mono } from "next/font/google";
+// import { Ubuntu_Mono } from "next/font/google";
 
 // import { VT323 } from "next/font/google";
 import { Noto_Sans_Mono } from "next/font/google";
 
-const ubuntu_bold = Ubuntu_Mono({
-    weight: ['700'],
-});
+// const ubuntu_bold = Ubuntu_Mono({
+//     weight: ['700'],
+// });
 
-const ubuntu_regular = Ubuntu_Mono({
-    weight: ['400']
-});
+// const ubuntu_regular = Ubuntu_Mono({
+//     weight: ['400']
+// });
 
 const terminal_font = Noto_Sans_Mono({
     weight: ['400']
 })
 
-const text = [
-    'Line 1',
-    'Line 2',
-    'Line 3'
-]
+// const text = [
+//     'Line 1',
+//     'Line 2',
+//     'Line 3'
+// ]
 
 const navigation = [
     'home',
