@@ -57,7 +57,7 @@ const achievements = [
 const projects = [
   { name: "Project Title 1", technology: "React & Node.js", year: "March 2025" },
   { name: "Project Title 2", technology: "Python & Django", year: "February 2025" },
-  { name: "Project Titlegi 3", technology: "Go & Kubernetes", year: "January 2025" }
+  { name: "Project Titlegi 3", technology: "Go & Kubernetes", year: "January 2025" },
 ];
 
 

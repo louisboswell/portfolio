@@ -5,7 +5,8 @@ import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
 const options = [
     'home',
     'blog',
-    'projects'
+    'projects',
+    'terminal'
 ]
 
 export default function Navbar () {
