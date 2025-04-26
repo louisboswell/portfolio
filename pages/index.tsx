@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { AtSign, CornerDownRight } from "lucide-react";
+import { AtSign } from "lucide-react";
 import { Geist, Geist_Mono } from "next/font/google";
 
 const geistSans = Geist({
@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-function listItem (item: {role: string, location: string, year: string}, index: number) {
-  const offset = "ml-" + index;
+function listItem (item: {role: string, location: string, year: string}) {
+  // const offset = "ml-" + index;
 
   return (
     <li className={"flex justify-between items-center mt-.5"}>
