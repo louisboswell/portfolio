@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Circle, CircleCheck, Coffee, Dumbbell, Flower, Gamepad, Scissors } from "lucide-react";
+import { Apple, Bike, Book, Circle, CircleCheck, Coffee, Dumbbell, Film, Flower, Gamepad, Globe, Heart, IceCream, Laptop, PawPrint, PenTool, Scissors } from "lucide-react";
 import { ReactElement } from "react";
 
 interface LoyaltyCard {
@@ -52,13 +52,104 @@ const loyaltyCards: LoyaltyCard[] = [
         gradientClass: 'bg-gradient-to-r from-indigo-950 to-blue-900',
         required: 10,
         completed: 7
+    },
+    {
+        name: 'Page Turners',
+        address: '12 Library Lane, Book District',
+        icon: <Book />,
+        service: 'book purchase',
+        gradientClass: 'bg-gradient-to-r from-yellow-900 to-amber-800',
+        required: 5,
+        completed: 1
+    },
+    {
+        name: 'Glow Spa',
+        address: '3 Serenity Blvd, Uptown',
+        icon: <Heart />,
+        service: 'spa treatment',
+        gradientClass: 'bg-gradient-to-r from-rose-900 to-pink-800',
+        required: 4,
+        completed: 2
+    },
+    {
+        name: 'CineMagic',
+        address: 'Movie Hub, Central Park',
+        icon: <Film />,
+        service: 'movie ticket',
+        gradientClass: 'bg-gradient-to-r from-gray-900 to-slate-800',
+        required: 10,
+        completed: 6
+    },
+    {
+        name: 'Pedal Power',
+        address: 'Cycle Lane, Riverside',
+        icon: <Bike />,
+        service: 'bike rental',
+        gradientClass: 'bg-gradient-to-r from-lime-900 to-green-800',
+        required: 12,
+        completed: 5
+    },
+    {
+        name: 'Sweet Tooth',
+        address: '89 Dessert Drive, Midtown',
+        icon: <IceCream />,
+        service: 'dessert purchase',
+        gradientClass: 'bg-gradient-to-r from-rose-950 to-fuchsia-900',
+        required: 7,
+        completed: 4
+    },
+    {
+        name: 'Tech Haven',
+        address: '5 Silicon Street, Tech Park',
+        icon: <Laptop />,
+        service: 'gadget repair',
+        gradientClass: 'bg-gradient-to-r from-slate-950 to-gray-900',
+        required: 3,
+        completed: 1
+    },
+    {
+        name: 'Urban Ink',
+        address: 'Tattoo Alley, Downtown',
+        icon: <PenTool />,
+        service: 'tattoo session',
+        gradientClass: 'bg-gradient-to-r from-neutral-950 to-zinc-900',
+        required: 5,
+        completed: 2
+    },
+    {
+        name: 'Fresh Bites',
+        address: 'Market Square, East End',
+        icon: <Apple />,
+        service: 'organic purchase',
+        gradientClass: 'bg-gradient-to-r from-emerald-950 to-teal-900',
+        required: 9,
+        completed: 3
+    },
+    {
+        name: 'Wanderlust Travels',
+        address: 'Suite 10, Explorer Building, Uptown',
+        icon: <Globe />,
+        service: 'travel booking',
+        gradientClass: 'bg-gradient-to-r from-cyan-950 to-sky-900',
+        required: 2,
+        completed: 1
+    },
+    {
+        name: 'Paws & Claws',
+        address: 'Pet Street, Suburbia',
+        icon: <PawPrint />,
+        service: 'pet grooming',
+        gradientClass: 'bg-gradient-to-r from-orange-950 to-amber-900',
+        required: 6,
+        completed: 4
     }
 ];
 
 
+
 function displayCard (card: LoyaltyCard) {
     return (
-        <Card className={`w-90 ${card.gradientClass} border-0 shadow-2x`}>
+        <Card className={`${card.gradientClass} border shadow-2x w-90 inline-flex mt-8`}>
             <CardHeader>
                 <div className="flex flex-row justify-between items-center">
                 <div className="flex flex-col">
@@ -124,7 +215,7 @@ export default function CardMaker () {
     };
 
     return (
-        <div>
+        <div className="flex flex-col justify-center items-center">
         <div className="flex flex-col justify-center text-center">
             <a className="text-8xl font-bold text-wrap mx-60 mt-10">
                 Customer rewards and referrals made easy
@@ -134,7 +225,7 @@ export default function CardMaker () {
                 Upgrade your simple loyalty card and start reaching more customers today
             </a>
         </div>
-        <div className="flex flex-row mb-10 justify-center mx-24 gap-4 items-start mt-8">
+        <div className="columns-1 sm:columns-2 lg:columns-3 max-w-6xl">
             {displayCard(demo)}
 
             {loyaltyCards.map((card) => displayCard(card))}
