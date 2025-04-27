@@ -6,7 +6,8 @@ const options = [
     'home',
     'blog',
     'projects',
-    'terminal'
+    'terminal',
+    'cardmaker'
 ]
 
 export default function Navbar () {

@@ -14,7 +14,8 @@ import { Noto_Sans_Mono } from "next/font/google";
 // });
 
 const terminal_font = Noto_Sans_Mono({
-    weight: ['400']
+    weight: ['400'],
+    subsets: ['latin']
 })
 
 // const text = [
