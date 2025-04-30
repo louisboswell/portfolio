@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { AtSign } from "lucide-react";
+import Footer from "@/components/ui/homebrew/Footer";
+import { Briefcase, MapPin } from "lucide-react";
 import { Geist, Geist_Mono } from "next/font/google";
+import { TypeAnimation } from "react-type-animation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,86 +13,146 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-function listItem (item: {role: string, location: string, year: string}) {
-  // const offset = "ml-" + index;
-
-  return (
-    <li className={"flex justify-between items-center mt-.5"}>
-    <div className="flex gap-1">
-    {/* <CornerDownRight size={24}/> */}
-    <a className="font-bold">
-      {item.role}
-    </a>
-    <AtSign alignmentBaseline="central" size={24} className="p-1"/>
-    <a>{item.location}</a>
-    </div>
-
-    <a className="text-xs italic text-gray-400">{item.year}</a>
-  </li>
-  );
-}
-
-function listProject (item: {name: string, technology: string, year: string}) {
-  return (
-    <li>
-      <Button variant="ghost" className="flex flex-row justify-between items-center w-full h-auto px-1 py-1 cursor-pointer">
-      <div className="flex flex-col items-start">
-        <a className="font-bold text-lg">{item.name}</a>
-        <a className="text-xs">{item.technology}</a>
-      </div>
-
-      <a className="text-xs text-gray-400">{item.year}</a>
-      </Button>
-    </li>
-  );
-}
-
 const achievements = [
-  { role: "Computer Science", location: "University of Leeds", year: "2020 - 2024" },
   { role: "Technology Consultant", location: "PwC", year: "2020 - current" },
-  { role: "Young Engineer of the Year", location: "Big Bang Fair Regional", year: "2019"},
-  { role: "Innovation Eward Winner", location: "EES", year: "2019"}
+  {
+    role: "Computer Science",
+    location: "University of Leeds",
+    year: "2020 - 2024",
+  },
+  {
+    role: "Young Engineer of the Year",
+    location: "Big Bang Fair Regional",
+    year: "2019",
+  },
+  // { role: "Innovation Eward Winner", location: "EES", year: "2019" },
 ];
 
 const projects = [
-  { name: "Project Title 1", technology: "React & Node.js", year: "March 2025" },
-  { name: "Project Title 2", technology: "Python & Django", year: "February 2025" },
-  { name: "Project Titlegi 3", technology: "Go & Kubernetes", year: "January 2025" },
+  {
+    name: "Cinerank",
+    description:
+      "3-tier movie comparison platform, collected over 20,000 user submitted pairwise comparisons",
+    year: "July 2024",
+  },
+  {
+    name: "Project Patron",
+    description: "Customer rewards and referral platform for local businesses.",
+    year: "coming soon",
+  },
+  {
+    name: "Project Together",
+    description: "Building better habits through social connection.",
+    year: "coming soon",
+  },
 ];
 
+const blogs = [
+  {
+    name: "Why Low-Code Doesn't Work",
+    technology: "and why ceo's love it",
+    year: "May 2025",
+  },
+];
 
 export default function Home() {
   return (
-    <div>
-      <main
-        className={`${geistSans.variable} ${geistMono.variable} flex flex-col items-center justify-start py-24`}
-      >
-        <div className="flex flex-col min-md:w-1/2">
-        <div className="flex flex-row justify-between items-end">
-          <a className="font-bold text-5xl subpixel-antialiased">
-            louis boswell
+    <main
+      className={`${geistSans.variable} ${geistMono.variable} flex justify-center`}
+    >
+      <div className="w-1/2 justify-start flex-col">
+        <div className="mt-8 mb-4">
+          <a className="text-2xl font-bold">Louis Boswell</a>
+        </div>
+
+        <div className="flex-row flex gap-2 items-center">
+          <MapPin color="gray" size={18} />
+          <a style={{ color: "gray" }}>Sheffield, England</a>
+        </div>
+
+        <div className="flex-row flex gap-2 items-center mb-4">
+          <Briefcase color="gray" size={18} />
+          <TypeAnimation
+            sequence={[
+              // Same substring at the start will only be typed out once, initially
+              "Technology Consultant @ PwC",
+              1000,
+              "First Class Computer Science Graduate @ UoL",
+              1000,
+              "Young Engineer of the Year 2019",
+              1000,
+              1,
+            ]}
+            wrapper="span"
+            speed={50}
+            style={{ fontSize: "18", color: "gray", display: "inline-block" }}
+            repeat={Infinity}
+          />
+        </div>
+
+        <div className="italic mb-2">
+          <a>
+            Passionate tech enthusiast with a strong foundation in computer
+            science, and a burning desire to learn.
           </a>
-          <a className="italic text-sm text-gray-400">UK</a>
         </div>
 
-
-          <Separator className="mb-4"/>
-          <a className="font-semibold">Passionate and curious tech enthusiast with a strong foundation in computer science, and a burning desire to keep learning.</a>
-          <a className="mt-2">Currently working as a Technology Consultant at PwC after graduating the Technology Degree Apprentice program, with a 1st degree in Computer Science from the University of Leeds.</a>
-
-          <a className="mt-10 font-bold text-2xl">current projects</a>
-            <Separator/>
-            <ul className="list-none">
-              {projects.map((item) => listProject(item))}
-            </ul>
-
-            <a className="mt-10 font-bold text-2xl">achievements</a>
-            <Separator/>
-            <ul className="list-none">
-              {achievements.map((item) => listItem(item))}
-            </ul>
+        <div className="mb-8">
+          <a>
+            Currently working as a Technology Consultant at PwC after graduating
+            the Technology Degree Apprentice program, with a 1st degree in
+            Computer Science from the University of Leeds.
+          </a>
         </div>
-      </main>
-    </div>
+
+        <div className="flex-1">
+          <a className="text-xl font-bold">Projects</a>
+
+          {projects.map((project) => (
+            <div key={project.name} className="flex flex-col mt-2">
+              <div className="flex flex-row justify-between">
+                <a>{project.name}</a>
+
+                <a className="text-sm text-gray-400 italic">{project.year}</a>
+              </div>
+
+              <a className="text-sm text-gray-400 pr-12">
+                {project.description}
+              </a>
+            </div>
+          ))}
+        </div>
+        <div className="flex-1 items-start mt-8">
+          <a className="text-xl font-bold">Blog</a>
+          {blogs.map((blog) => (
+            <div key={blog.name} className="flex flex-col mt-2">
+              <a>{blog.name}</a>
+              <div className="flex flex-row justify-between">
+                <a className="text-sm text-gray-400">{blog.technology}</a>
+                <a className="text-sm text-gray-400 italic">{blog.year}</a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex-1 flex-col mt-8">
+          <a className="text-xl font-bold">Career</a>
+          {achievements.map((achievement) => (
+            <div key={achievement.role} className="flex flex-col mt-2">
+              <a>{achievement.role}</a>
+              <div className="flex flex-row justify-between">
+                <a className="text-sm text-gray-400">{achievement.location}</a>
+                <a className="text-sm text-gray-400 italic">
+                  {achievement.year}
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-center">
+          <Footer />
+        </div>
+      </div>
+    </main>
   );
 }

@@ -16,6 +16,7 @@ interface LoyaltyCard {
     gradientClass: string,
 }
 
+
 const loyaltyCards: LoyaltyCard[] = [
     {
         name: 'Bean & Brew',
