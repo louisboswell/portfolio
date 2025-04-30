@@ -29,7 +29,7 @@ function socialLink(social: { name: string; url: string }) {
 
 export default function Footer() {
   return (
-    <div className="flex justify-center flex-col items-center fixed bottom-6">
+    <div className="flex justify-center flex-col items-center mt-8">
       <div className="flex flex-row gap-4">
         {socials.map((social) => socialLink(social))}
       </div>

@@ -1,6 +1,8 @@
 import Footer from "@/components/ui/homebrew/Footer";
 import { Briefcase, MapPin } from "lucide-react";
+import { useTheme } from "next-themes";
 import { Geist, Geist_Mono } from "next/font/google";
+import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 
 const geistSans = Geist({
@@ -56,11 +58,14 @@ const blogs = [
 ];
 
 export default function Home() {
+  const { theme} = useTheme();
   return (
     <main
       className={`${geistSans.variable} ${geistMono.variable} flex justify-center`}
     >
-      <div className="w-1/2 justify-start flex-col">
+      <div className="min-lg:w-1/2 justify-start flex-col">
+      <div className="flex flex-row justify-between items-center">
+        <div className="flex flex-col">
         <div className="mt-8 mb-4">
           <a className="text-2xl font-bold">Louis Boswell</a>
         </div>
@@ -90,18 +95,23 @@ export default function Home() {
           />
         </div>
 
+          </div>
+            <Image alt="me" src="/avatar.png" width={90} height={90} className={`mt-2 rounded-full -scale-x-100 border-white hover:animate-spin ${theme == 'light' ? 'invert' : null}`}/>
+
+</div>
         <div className="italic mb-2">
           <a>
             Passionate tech enthusiast with a strong foundation in computer
             science, and a burning desire to learn.
           </a>
         </div>
+            
 
         <div className="mb-8">
           <a>
             Currently working as a Technology Consultant at PwC after graduating
-            the Technology Degree Apprentice program, with a 1st degree in
-            Computer Science from the University of Leeds.
+            the Technology Degree Apprentice program, with a degree in
+            Computer Science from the University of Leeds (First Class with Honours).
           </a>
         </div>
 
