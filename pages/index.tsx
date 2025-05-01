@@ -63,8 +63,8 @@ export default function Home() {
     <main
       className={`${geistSans.variable} ${geistMono.variable} flex justify-center`}
     >
-      <div className="min-lg:w-1/2 justify-start flex-col">
-      <div className="flex flex-row justify-between items-center">
+      <div className="min-lg:w-1/2 justify-start flex-col mt-8">
+      <div className="flex flex-row justify-between items-start">
         <div className="flex flex-col">
         <div className="mt-8 mb-4">
           <a className="text-2xl font-bold">Louis Boswell</a>
@@ -75,8 +75,8 @@ export default function Home() {
           <a style={{ color: "gray" }}>Sheffield, England</a>
         </div>
 
-        <div className="flex-row flex gap-2 items-center mb-4">
-          <Briefcase color="gray" size={18} />
+        <div className="flex-row flex gap-2 items-start mb-4 pr-8">
+          <Briefcase style={{flexShrink: 0}} className="mt-1" color="gray" size={18} />
           <TypeAnimation
             sequence={[
               // Same substring at the start will only be typed out once, initially
@@ -96,7 +96,7 @@ export default function Home() {
         </div>
 
           </div>
-            <Image alt="me" src="/avatar.png" width={90} height={90} className={`mt-2 rounded-full -scale-x-100 border-white hover:animate-spin ${theme == 'light' ? 'invert' : null}`}/>
+            <Image alt="me" src="/avatar.png" width={90} height={90} className={`mt-8 rounded-full -scale-x-100 border-1 border-white hover:animate-spin ${theme == 'light' ? 'invert' : null}`}/>
 
 </div>
         <div className="italic mb-2">

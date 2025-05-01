@@ -1,4 +1,4 @@
-// import Footer from "@/components/ui/homebrew/Footer";
+
 // import Navbar from '@/components/ui/homebrew/Navbar';
 import { ReactNode } from "react";
 
@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex p-10 flex-col h-screen justify-between">
+          <div className="flex px-10 flex-col h-screen justify-between">
             {/* <Navbar/> */}
             <main className="">{children}</main>
             {/* <Footer/> */}
