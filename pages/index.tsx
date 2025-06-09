@@ -39,7 +39,7 @@ const projects = [
   {
     name: "Cinerank",
     description:
-      "3-tier movie comparison platform, collected over 20,000 user submitted pairwise comparisons",
+      "React js and Flask serverless function 3-tier application, processed and calculated over 20,000 realtime user comparisons - cumulating in an explorative piece on relative vs absolute methods of ranking media. Received 76% grade.",
     year: "July 2024",
     http: "/BOSWELL-FINAL24.pdf",
   },
@@ -57,24 +57,24 @@ export default function Home() {
               <a className="text-2xl font-bold">Louis Boswell</a>
             </div>
 
-            <div className="flex-row flex gap-2 items-center">
-              <MapPin color="gray" size={18} />
+            <div className="flex-row flex gap-2 items-center text-sm">
+              <MapPin color="gray" size={14} />
               <a style={{ color: "gray" }}>Sheffield, England</a>
             </div>
 
-            <div className="flex-row flex gap-2 items-start mb-4 pr-8">
+            <div className="flex-row flex gap-2 items-start mb-4 pr-8 text-sm">
               <Briefcase
                 style={{ flexShrink: 0 }}
                 className="mt-1"
                 color="gray"
-                size={18}
+                size={14}
               />
               <TypeAnimation
                 sequence={[
                   // Same substring at the start will only be typed out once, initially
                   "Technology Consultant @ PwC",
                   1000,
-                  "First Class Computer Science Graduate @ UoL",
+                  "First Class Computer Science Grad",
                   1000,
                   "Young Engineer of the Year 2019",
                   1000,
@@ -114,7 +114,7 @@ export default function Home() {
           {projects.map((project) => (
             <a
               key={project.name}
-              className="flex flex-col mt-2"
+              className="flex flex-col mt-2 hover:bg-primary-foreground rounded-lg px-2"
               href={project.http!}
               rel="noopener noreferrer"
               target="_blank"
@@ -147,7 +147,7 @@ export default function Home() {
         <div className="flex-1 flex-col mt-8">
           <a className="text-xl font-bold">Career</a>
           {achievements.map((achievement) => (
-            <div key={achievement.role} className="flex flex-col mt-2">
+            <div key={achievement.role} className="flex flex-col mt-2 px-2">
               <a>{achievement.role}</a>
               <div className="flex flex-row justify-between">
                 <a className="text-sm text-gray-400">{achievement.location}</a>
