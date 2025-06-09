@@ -32,7 +32,7 @@ const projects = [
   {
     name: "Noughts",
     description:
-      "Noughts and crosses built in Next.js. Developed in under a day as a refresher.",
+      "Noughts and crosses built in Next.js and Redux Toolkit. Developed in under a day as a refresher.",
     year: "June 2025",
     http: "https://www.noughts.xyz",
   },
