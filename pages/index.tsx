@@ -37,6 +37,13 @@ const projects = [
     http: "https://www.noughts.xyz",
   },
   {
+    name: "Zombie Shooter",
+    description:
+      "Top down pixel zombie shooter demo built in Godot - with 15 unique weapons, 5 consumables & wave-based scaling difficulty.",
+    year: "August 2024",
+    http: "https://www.github.com/louisboswell/zombie-shooter",
+  },
+  {
     name: "Cinerank",
     description:
       "React js and Flask serverless function 3-tier application, processed and calculated over 20,000 realtime user comparisons - cumulating in an explorative piece on relative vs absolute methods of ranking media. Received 76% grade.",
