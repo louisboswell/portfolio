@@ -41,7 +41,7 @@ const projects = [
     description:
       "3-tier movie comparison platform, collected over 20,000 user submitted pairwise comparisons",
     year: "July 2024",
-    http: null,
+    http: "/BOSWELL-FINAL24.pdf",
   },
 ];
 
