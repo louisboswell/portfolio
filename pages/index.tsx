@@ -2,6 +2,7 @@ import Footer from "@/components/ui/homebrew/Footer";
 import { Separator } from "@/components/ui/separator";
 import { BriefcaseBusiness, Clapperboard, Coins, Grid3X3, Icon, MapPin, Nut } from "lucide-react";
 import { Geist, Geist_Mono } from "next/font/google";
+import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 
 const geistSans = Geist({
@@ -70,7 +71,16 @@ export default function Home() {
       className={`${geistSans.variable} ${geistMono.variable} flex justify-start md:w-1/2 w-screen mx-auto px-4`}
     >
       <div className="grid py-8">
-          <h1 className="text-2xl font-bold">Louis Boswell</h1>
+          <div className="flex flex-row">
+          <Image
+            src={"/72051071.jpg"}
+            alt="Louis Boswell"
+            width={64}
+            height={64}
+            className="round object-cover size-18 mr-4 shadow-xl"
+          />     
+       <div>
+                                    <h1 className="text-2xl font-bold">Louis Boswell</h1>
           <div className="flex flex-row items-center gap-2 mt-1">
             <BriefcaseBusiness className="size-4 text-muted-foreground"/>
             <TypeAnimation
@@ -90,11 +100,14 @@ export default function Home() {
                 className="text-sm font-medium text-muted-foreground"
               />
           </div>
-
-          <div className="flex flex-row items-center gap-2">
+                    <div className="flex flex-row items-center gap-2">
             <MapPin className="size-4 text-muted-foreground"/>
             <h2 className="text-sm font-medium text-muted-foreground">London, England</h2>
           </div>
+            </div>
+          </div>
+
+
 
           <h1 className="text-lg font-bold mt-8">
             Projects
@@ -103,14 +116,14 @@ export default function Home() {
           {projects.map((project) => {
             const IconComponent = project.icon;
             return (
-          <a key={project.name} className="flex flex-row items-center mb-2 gap-4 hover:scale-x-101"
+          <a key={project.name} className="flex flex-row justify-between items-center mb-2 gap-4"
           href={project.http}
               rel="noopener noreferrer"
               target="_blank">
                 <div className="flex items-center justify-center w-8 h-8 shrink-0">
                   <IconComponent className="w-6 h-6" strokeWidth={2} />
                 </div>
-            <div className="flex flex-col pr-2 md:pr-12">
+            <div className="flex flex-col w-full">
               <p className="text-md font-semibold">{project.name}</p>
               <p className="text-sm text-muted-foreground">{project.description}</p>
               </div>
