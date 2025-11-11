@@ -68,9 +68,9 @@ const projects = [
 export default function Home() {
   return (
     <main
-      className={`${geistSans.variable} ${geistMono.variable} flex justify-start md:w-1/2 w-screen mx-auto px-4`}
+      className={`${geistSans.variable} ${geistMono.variable} flex justify-center md:w-1/2 w-screen mx-auto px-4`}
     >
-      <div className="grid py-8">
+      <div className="grid py-8 items-center flex flex-col justify-center">
           <div className="flex flex-row">
           <Image
             src={"/72051071.jpg"}
@@ -80,7 +80,7 @@ export default function Home() {
             className="round object-cover size-18 mr-4 shadow-xl"
           />     
        <div>
-                                    <h1 className="text-2xl font-bold">Louis Boswell</h1>
+          <h1 className="text-2xl font-bold">Louis Boswell</h1>
           <div className="flex flex-row items-center gap-2 mt-1">
             <BriefcaseBusiness className="size-4 text-muted-foreground"/>
             <TypeAnimation
