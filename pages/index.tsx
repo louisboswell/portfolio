@@ -1,5 +1,6 @@
 import Footer from "@/components/ui/homebrew/Footer";
-import { Briefcase, MapPin } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import { BriefcaseBusiness, Clapperboard, Coins, Grid3X3, Icon, MapPin, Nut } from "lucide-react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { TypeAnimation } from "react-type-animation";
 
@@ -30,53 +31,49 @@ const achievements = [
 
 const projects = [
   {
+    name: "Acorn Notes",
+    description:
+      "AI augmented note taking app, turned intelligent assistant. Automatically ingest, categorize and map your knowledge.",
+    year: "Coming Soon",
+    http: "/",
+    icon: Nut
+  },
+  {
+    name: "Coinflip",
+    description:
+      "Coin flipping simulator, built using Three.js & Next.js. Built to test and learn Three.js for rendering 3D models in web.",
+    year: "Oct 2025",
+    http: "https://coin-flip-livid.vercel.app/",
+    icon: Coins
+  },
+  {
     name: "Noughts",
     description:
       "Noughts and crosses built in Next.js and Redux Toolkit. Developed in under a day as a refresher.",
     year: "June 2025",
     http: "https://www.noughts.xyz",
-  },
-  {
-    name: "Zombie Shooter",
-    description:
-      "Top down pixel zombie shooter demo built in Godot - with 15 unique weapons, 5 consumables & wave-based scaling difficulty.",
-    year: "August 2024",
-    http: "https://www.github.com/louisboswell/zombie-shooter",
+    icon: Grid3X3
   },
   {
     name: "Cinerank",
     description:
-      "React js and Flask serverless function 3-tier application, processed and calculated over 20,000 realtime user comparisons - cumulating in an explorative piece on relative vs absolute methods of ranking media. Received 76% grade.",
+      "Explorative piece on relative vs absolute methods of ranking media. React & Flask 3-tier application, processed over 20,000 realtime user comparisons.",
     year: "July 2024",
     http: "/BOSWELL-FINAL24.pdf",
+    icon: Clapperboard
   },
 ];
 
 export default function Home() {
   return (
     <main
-      className={`${geistSans.variable} ${geistMono.variable} flex justify-center`}
+      className={`${geistSans.variable} ${geistMono.variable} flex justify-start md:w-1/2 w-screen mx-auto px-4`}
     >
-      <div className="min-lg:w-1/2 justify-start flex-col mt-8">
-        <div className="flex flex-row justify-between items-start">
-          <div className="flex flex-col">
-            <div className="mt-8 mb-4">
-              <a className="text-2xl font-bold">Louis Boswell</a>
-            </div>
-
-            <div className="flex-row flex gap-2 items-center text-sm">
-              <MapPin color="gray" size={14} />
-              <a style={{ color: "gray" }}>Sheffield, England</a>
-            </div>
-
-            <div className="flex-row flex gap-2 items-start mb-4 pr-8 text-sm">
-              <Briefcase
-                style={{ flexShrink: 0 }}
-                className="mt-1"
-                color="gray"
-                size={14}
-              />
-              <TypeAnimation
+      <div className="grid py-8">
+          <h1 className="text-2xl font-bold">Louis Boswell</h1>
+          <div className="flex flex-row items-center gap-2 mt-1">
+            <BriefcaseBusiness className="size-4 text-muted-foreground"/>
+            <TypeAnimation
                 sequence={[
                   // Same substring at the start will only be typed out once, initially
                   "Technology Consultant @ PwC",
@@ -89,86 +86,56 @@ export default function Home() {
                 ]}
                 wrapper="span"
                 speed={50}
-                style={{
-                  fontSize: "18",
-                  color: "gray",
-                  display: "inline-block",
-                }}
                 repeat={Infinity}
+                className="text-sm font-medium text-muted-foreground"
               />
-            </div>
           </div>
-          {/* <Image alt="me" src="/avatar.png" width={90} height={90} className={`mt-8 rounded-full -scale-x-100 border-1 border-white hover:animate-spin ${theme == 'light' ? 'invert' : null}`}/> */}
-        </div>
-        <div className="italic mb-2">
-          <a>
-            Passionate tech enthusiast with a strong foundation in computer
-            science, and a burning desire to learn.
-          </a>
-        </div>
 
-        <div className="mb-8">
-          <a>
-            Currently working as a Technology Consultant at PwC after graduating
-            the Technology Degree Apprentice program, with a degree in Computer
-            Science from the University of Leeds (First Class with Honours).
-          </a>
-        </div>
+          <div className="flex flex-row items-center gap-2">
+            <MapPin className="size-4 text-muted-foreground"/>
+            <h2 className="text-sm font-medium text-muted-foreground">London, England</h2>
+          </div>
 
-        <div className="flex-1">
-          <a className="text-xl font-bold">Projects</a>
-
-          {projects.map((project) => (
-            <a
-              key={project.name}
-              className="flex flex-col mt-2 hover:bg-primary-foreground rounded-lg px-2"
-              href={project.http!}
+          <h1 className="text-lg font-bold mt-8">
+            Projects
+          </h1>
+          <Separator className="mb-2"/>
+          {projects.map((project) => {
+            const IconComponent = project.icon;
+            return (
+          <a key={project.name} className="flex flex-row items-center mb-2 gap-4 hover:scale-x-101"
+          href={project.http}
               rel="noopener noreferrer"
-              target="_blank"
-            >
-              <a className="flex flex-row justify-between">
-                <a>{project.name}</a>
-
-                <a className="text-sm text-gray-400 italic">{project.year}</a>
-              </a>
-
-              <a className="text-sm text-gray-400 pr-12">
-                {project.description}
-              </a>
-            </a>
-          ))}
-        </div>
-        {/* <div className="flex-1 items-start mt-8">
-          <a className="text-xl font-bold">Blog</a>
-          {blogs.map((blog) => (
-            <div key={blog.name} className="flex flex-col mt-2">
-              <a>{blog.name}</a>
-              <div className="flex flex-row justify-between">
-                <a className="text-sm text-gray-400">{blog.technology}</a>
-                <a className="text-sm text-gray-400 italic">{blog.year}</a>
+              target="_blank">
+                <div className="flex items-center justify-center w-8 h-8 shrink-0">
+                  <IconComponent className="w-6 h-6" strokeWidth={2} />
+                </div>
+            <div className="flex flex-col pr-2 md:pr-12">
+              <p className="text-md font-semibold">{project.name}</p>
+              <p className="text-sm text-muted-foreground">{project.description}</p>
               </div>
-            </div>
-          ))}
-        </div> */}
+            
+            <p className="text-xs text-muted-foreground text-nowrap italic">{project.year}</p>
+          </a>)})}
 
-        <div className="flex-1 flex-col mt-8">
-          <a className="text-xl font-bold">Career</a>
-          {achievements.map((achievement) => (
-            <div key={achievement.role} className="flex flex-col mt-2 px-2">
-              <a>{achievement.role}</a>
-              <div className="flex flex-row justify-between">
-                <a className="text-sm text-gray-400">{achievement.location}</a>
-                <a className="text-sm text-gray-400 italic">
-                  {achievement.year}
-                </a>
+
+          <h1 className="text-lg font-bold mt-8">
+            Career
+          </h1>
+          <Separator className="mb-2"/>
+
+            {achievements.map((achievement) => 
+          <div key={achievement.role} className="flex flex-row items-center justify-between mb-2 gap-24">
+            <div className="flex flex-col">
+              <p className="text-md font-bold">{achievement.role}</p>
+              <p className="text-sm text-muted-foreground">{achievement.location}</p>
               </div>
-            </div>
-          ))}
-        </div>
-        <div className="flex justify-center">
-          <Footer />
-        </div>
+            
+            <p className="text-xs text-muted-foreground text-nowrap italic">{achievement.year}</p>
+          </div>)}
+          <Footer/>
       </div>
+      
     </main>
   );
 }

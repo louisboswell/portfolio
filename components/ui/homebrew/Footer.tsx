@@ -20,23 +20,23 @@ function socialLink(social: { name: string; url: string }) {
   return (
     <Button variant="link" onClick={() => openInNewTab(social.url)}>
       <ExternalLink size={12} />
-      <a className="font-semibold text-foreground cursor-pointer text-sm">
+      <p className="font-semibold text-foreground cursor-pointer text-sm">
         {social.name}
-      </a>
+      </p>
     </Button>
   );
 }
 
 export default function Footer() {
   return (
-    <div className="flex justify-center flex-col items-center mt-8">
+    <div className="flex justify-center flex-col items-center mt-12">
       <div className="flex flex-row gap-4">
         {socials.map((social) => socialLink(social))}
       </div>
       <div className="flex flex-row justify-between gap-2 items-center">
-        <a className="text-gray-400 text-xs">
+        <p className="text-gray-400 text-xs">
           created by louisboswell1@gmail.com
-        </a>
+        </p>
         <ModeToggle />
       </div>
     </div>
