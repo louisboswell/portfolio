@@ -1,6 +1,5 @@
 import Footer from "@/components/ui/homebrew/Footer";
 import { MeshGradientBackground } from "@/components/ui/mesh-gradient";
-import { Particles } from "@/components/ui/particles";
 import { Separator } from "@/components/ui/separator";
 import { BriefcaseBusiness, Clapperboard, Coins, Grid3X3, Icon, MapPin, Nut } from "lucide-react";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -18,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 const achievements = [
-  { role: "Agent Engineer", location: "Profound", year: "Coming Soon" },
+  { role: "Agent Engineering", location: "Profound", year: "Coming Soon" },
   { role: "Strategy & Architecture", location: "PwC", year: "2020 - 2026" },
   {
     role: "Computer Science",
