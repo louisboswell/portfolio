@@ -8,7 +8,7 @@ const socials = [
     url: "https://www.linkedin.com/in/louis-boswell-4219541b7/",
   },
   { name: "Github", url: "https://github.com/louisboswell" },
-  { name: "Twitter", url: "https://x.com/louisboswell7" },
+  // { name: "Twitter", url: "https://x.com/louisboswell7" },
 ];
 
 function socialLink(social: { name: string; url: string }) {

@@ -1,4 +1,6 @@
 import Footer from "@/components/ui/homebrew/Footer";
+import { MeshGradientBackground } from "@/components/ui/mesh-gradient";
+import { Particles } from "@/components/ui/particles";
 import { Separator } from "@/components/ui/separator";
 import { BriefcaseBusiness, Clapperboard, Coins, Grid3X3, Icon, MapPin, Nut } from "lucide-react";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -16,7 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 const achievements = [
-  { role: "Technology Consultant", location: "PwC", year: "2020 - current" },
+  { role: "Agent Engineer", location: "Profound", year: "Coming Soon" },
+  { role: "Strategy & Architecture", location: "PwC", year: "2020 - 2026" },
   {
     role: "Computer Science",
     location: "University of Leeds",
@@ -52,7 +55,7 @@ const projects = [
     description:
       "Noughts and crosses built in Next.js and Redux Toolkit. Developed in under a day as a refresher.",
     year: "June 2025",
-    http: "https://www.noughts.xyz",
+    http: "https://noughts-two.vercel.app/",
     icon: Grid3X3
   },
   {
@@ -70,7 +73,8 @@ export default function Home() {
     <main
       className={`${geistSans.variable} ${geistMono.variable} flex justify-center md:w-1/2 w-screen mx-auto px-4`}
     >
-      <div className="grid py-8 items-center flex flex-col justify-center">
+      <MeshGradientBackground>
+      <div className="grid py-8 items-center flex flex-col justify-center px-6">
           <div className="flex flex-row">
           <Image
             src={"/72051071.jpg"}
@@ -86,7 +90,7 @@ export default function Home() {
             <TypeAnimation
                 sequence={[
                   // Same substring at the start will only be typed out once, initially
-                  "Technology Consultant @ PwC",
+                  "Agent Engineering @ Profound",
                   1000,
                   "First Class Computer Science Grad",
                   1000,
@@ -148,6 +152,7 @@ export default function Home() {
           </div>)}
           <Footer/>
       </div>
+      </MeshGradientBackground>
       
     </main>
   );
