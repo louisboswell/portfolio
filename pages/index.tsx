@@ -72,7 +72,7 @@ export default function Home() {
     <main
       className={`${geistSans.variable} ${geistMono.variable} flex justify-center md:w-1/2 w-screen mx-auto px-4`}
     >
-      <MeshGradientBackground>
+      <MeshGradientBackground className="overflow-y-scroll overflow-x-hidden">
       <div className="grid py-8 items-center flex flex-col justify-center px-6">
           <div className="flex flex-row">
           <Image
